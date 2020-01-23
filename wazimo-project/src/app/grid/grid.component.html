@@ -1,0 +1,11 @@
+<div [ngClass]="{'grid': true, 'grid__blur': isLoading}"
+     infiniteScroll
+     [infiniteScrollDistance]="1"
+     [infiniteScrollThrottle]="300"
+     (scrolled)="onScroll()"
+     [scrollWindow]="false">
+  <app-user *ngFor="let u of users" [user]="u"></app-user>
+</div>
+<div *ngIf="isLoading" class="grid__loader">
+  <img src="../assets/loading.gif" alt="loading">
+</div>

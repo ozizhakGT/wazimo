@@ -1,0 +1,9 @@
+<div class="user">
+  <div class="user__name">{{user.first_name}} {{user.last_name}}</div>
+  <div class="user__email">{{user.email}}</div>
+  <div class="user__gender">{{user.gender}}</div>
+  <div class="user__actions">
+    <input [ngClass]="{'user__btn': true, 'user__btn--red': showIp}" type="button" value="{{showIp ? 'Hide' : 'Show'}}" (click)="toggleIpBtutton()">
+    <p *ngIf="showIp" class="user__ip">{{user.ip_address}}</p>
+  </div>
+</div>

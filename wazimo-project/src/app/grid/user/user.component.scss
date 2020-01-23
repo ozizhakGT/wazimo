@@ -1,0 +1,64 @@
+.user {
+  width: 50%;
+
+  display: flex;
+  margin: 25px auto;
+  padding: 25px;
+  align-items: center;
+
+  background-color: #fafafd;
+  & > *:not(:last-child) {
+    width: 33%;
+  }
+
+  &__btn {
+    width: 100px;
+
+    cursor: pointer;
+    position: relative;
+    border:none;
+    background-color: darkseagreen;
+    color: white;
+    font-size: inherit;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 15px rgba(0,0,0, .3);
+    z-index: 10;
+    transition: .4s all;
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+    &:active {
+      transform: translateY(1px) scale(.95);
+    }
+
+    &--red {
+      background-color: indianred;
+    }
+  }
+
+  &__actions {
+    position: relative;
+  }
+
+  &__ip {
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    transform: translateY(-50%);
+    color: lightgrey;
+    transition: color .2s;
+    animation: fadeInToLeft .4s forwards ease-out;
+
+
+    &:hover {
+      color: grey;
+    }
+  }
+}
+
+
+@keyframes fadeInToLeft {
+  from {left: -80px;}
+  to {left: -130px;}
+}
